@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="青山区皮耳朵文化艺术工作室 — 专注于文化艺术创作、手工艺培训、艺术展览策划与文创产品开发。">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <title>皮耳朵文化艺术工作室 | 青山</title>
+    <style>
+        :root {
+            --bg-primary: #faf8f5;
+            --bg-secondary: #f3efe8;
+            --bg-dark: #1c1814;
+            --text-primary: #2c2416;
+            --text-secondary: #6b5e4a;
+            --text-light: #c4b89e;
+            --accent: #c8923c;
+            --accent-dark: #a6762c;
+            --accent-light: #e8c97a;
+            --border: #e5ded4;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(28,24,20,0.06);
+            --shadow-md: 0 4px 20px rgba(28,24,20,0.08);
+            --shadow-lg: 0 12px 48px rgba(28,24,20,0.1);
+            --radius: 8px;
+            --radius-lg: 16px;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --font-heading: 'PingFang SC', 'Noto Serif SC', 'STSong', 'Songti SC', 'SimSun', 'KaiTi', serif;
+            --font-body: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0 48px; height: 72px;
+            display: flex; align-items: center; justify-content: space-between;
+            transition: var(--transition);
+            background: transparent;
+        }
+        .nav.scrolled {
+            background: rgba(250,248,245,0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-sm);
+            height: 60px;
+        }
+        .nav-logo {
+            display: flex; align-items: center; gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 1.35rem; font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 0.06em;
+            text-decoration: none;
+        }
+        .nav-logo .logo-mark {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1rem; font-weight: bold;
+        }
+        .nav-links { display: flex; list-style: none; gap: 36px; align-items: center; }
+        .nav-links a {
+            text-decoration: none; color: var(--text-secondary);
+            font-size: 0.92rem; letter-spacing: 0.04em;
+            transition: var(--transition); position: relative;
+            padding: 4px 0;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px;
+            background: var(--accent); transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            padding: 8px 22px; background: var(--accent); color: #fff !important;
+            border-radius: 24px; font-weight: 500; letter-spacing: 0.04em;
+            transition: var(--transition);
+        }
+        .nav-cta:hover { background: var(--accent-dark); transform: translateY(-1px); }
+        .nav-cta::after { display: none !important; }
+        .menu-toggle {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; background: none; border: none; padding: 6px;
+        }
+        .menu-toggle span {
+            display: block; width: 24px; height: 2px;
+            background: var(--text-primary); border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 120px 48px 80px;
+            position: relative; overflow: hidden;
+            background: linear-gradient(160deg, #f5f0e8 0%, #ede4d4 35%, #e8dcc8 70%, #f3efe8 100%);
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -60%; right: -20%; width: 70%;
+            height: 140%; background: radial-gradient(ellipse, rgba(200,146,60,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 620px; }
+        .hero-label {
+            display: inline-block; padding: 6px 16px;
+            border: 1px solid var(--accent);
+            color: var(--accent-dark); font-size: 0.8rem;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            border-radius: 20px; margin-bottom: 28px;
+            font-family: var(--font-body); font-weight: 500;
+        }
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+            font-weight: 800; line-height: 1.2;
+            color: var(--bg-dark); letter-spacing: 0.04em;
+            margin-bottom: 24px;
+        }
+        .hero-content h1 .highlight { color: var(--accent); }
+        .hero-content p {
+            font-size: 1.08rem; color: var(--text-secondary);
+            line-height: 1.8; margin-bottom: 36px; max-width: 480px;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 30px; border-radius: 28px; font-size: 0.95rem;
+            font-weight: 500; letter-spacing: 0.04em;
+            text-decoration: none; cursor: pointer; border: none;
+            transition: var(--transition); font-family: var(--font-body);
+        }
+        .btn-primary {
+            background: var(--accent); color: #fff;
+            box-shadow: 0 4px 16px rgba(200,146,60,0.35);
+        }
+        .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(200,146,60,0.4); }
+        .btn-outline {
+            background: transparent; color: var(--text-primary);
+            border: 1.5px solid var(--border);
+        }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+        .hero-visual {
+            position: absolute; right: 8%; top: 50%; transform: translateY(-50%);
+            width: 420px; height: 420px; z-index: 1;
+        }
+        .hero-visual .circle-lg {
+            position: absolute; width: 320px; height: 320px;
+            border-radius: 50%; border: 2px solid rgba(200,146,60,0.2);
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            animation: rotateSlow 28s linear infinite;
+        }
+        .hero-visual .circle-md {
+            position: absolute; width: 200px; height: 200px;
+            border-radius: 50%; border: 1.5px dashed rgba(200,146,60,0.25);
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            animation: rotateSlow 20s linear infinite reverse;
+        }
+        .hero-visual .circle-sm {
+            position: absolute; width: 100px; height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(200,146,60,0.15), rgba(166,118,44,0.08));
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        .hero-visual .dot {
+            position: absolute; width: 8px; height: 8px;
+            background: var(--accent); border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-visual .dot:nth-child(4) { top: 20%; left: 25%; animation-delay: 0s; }
+        .hero-visual .dot:nth-child(5) { top: 70%; left: 75%; animation-delay: 1.5s; }
+        .hero-visual .dot:nth-child(6) { top: 15%; left: 65%; animation-delay: 3s; }
+
+        @keyframes rotateSlow { to { transform: translate(-50%, -50%) rotate(360deg); } }
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+            50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-18px) scale(1.2); }
+        }
+
+        /* ========== SECTION COMMON ========== */
+        section { padding: 100px 48px; }
+        .section-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+        .section-tag {
+            display: inline-block; padding: 5px 14px;
+            background: rgba(200,146,60,0.08); color: var(--accent-dark);
+            font-size: 0.78rem; letter-spacing: 0.1em; font-weight: 500;
+            border-radius: 20px; margin-bottom: 16px;
+        }
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 700; color: var(--bg-dark);
+            margin-bottom: 16px; letter-spacing: 0.03em;
+        }
+        .section-header p {
+            color: var(--text-secondary); font-size: 1rem;
+            line-height: 1.7;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* ========== ABOUT ========== */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 72px;
+            align-items: center; max-width: 1100px; margin: 0 auto;
+        }
+        .about-image {
+            position: relative; border-radius: var(--radius-lg); overflow: hidden;
+            aspect-ratio: 4/5;
+        }
+        .about-image img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+        .about-image::after {
+            content: ''; position: absolute; inset: 0;
+            border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius-lg);
+            pointer-events: none;
+        }
+        .about-text h3 {
+            font-family: var(--font-heading); font-size: 1.6rem;
+            font-weight: 700; margin-bottom: 20px; color: var(--bg-dark);
+        }
+        .about-text p {
+            color: var(--text-secondary); margin-bottom: 16px;
+            font-size: 0.98rem; line-height: 1.85;
+        }
+        .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 36px; }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: var(--font-heading); font-size: 2.2rem;
+            font-weight: 700; color: var(--accent);
+        }
+        .stat-label { font-size: 0.82rem; color: var(--text-secondary); margin-top: 4px; }
+
+        /* ========== SERVICES ========== */
+        .services { background: var(--bg-secondary); }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+            max-width: 1100px; margin: 0 auto;
+        }
+        .service-card {
+            background: var(--white); border-radius: var(--radius-lg);
+            padding: 40px 32px; box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            position: relative; overflow: hidden;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0); transition: var(--transition);
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: rgba(200,146,60,0.08);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 20px;
+        }
+        .service-card h4 {
+            font-family: var(--font-heading); font-size: 1.15rem;
+            font-weight: 600; margin-bottom: 10px; color: var(--bg-dark);
+        }
+        .service-card p {
+            color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7;
+        }
+
+        /* ========== PORTFOLIO ========== */
+        .portfolio-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+            max-width: 1100px; margin: 0 auto;
+        }
+        .portfolio-item {
+            aspect-ratio: 1; border-radius: var(--radius-lg);
+            overflow: hidden; position: relative; cursor: pointer;
+            background: linear-gradient(135deg, #e8dcc8, #d9cdb3, #cbbfa3);
+        }
+        .portfolio-item img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+        .portfolio-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(28,24,20,0.75) 0%, rgba(28,24,20,0.1) 60%);
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 28px; opacity: 0; transition: var(--transition);
+        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-overlay h4 { color: #fff; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 4px; }
+        .portfolio-overlay span { color: var(--text-light); font-size: 0.82rem; }
+
+        /* ========== TEAM ========== */
+        .team { background: var(--bg-secondary); }
+        .team-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .team-card {
+            text-align: center; padding: 32px 24px 28px;
+            background: var(--white); border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+        .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .team-avatar {
+            width: 90px; height: 90px; border-radius: 50%;
+            margin: 0 auto 18px; overflow: hidden;
+        }
+        .team-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .team-card h4 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
+        .team-role { color: var(--accent); font-size: 0.82rem; font-weight: 500; margin-bottom: 10px; }
+        .team-card p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--white); border-radius: var(--radius-lg);
+            padding: 36px; box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"'; position: absolute; top: 16px; left: 24px;
+            font-family: var(--font-heading); font-size: 4rem;
+            color: rgba(200,146,60,0.1); line-height: 1;
+        }
+        .testimonial-text {
+            color: var(--text-primary); font-size: 0.95rem; line-height: 1.8;
+            margin-bottom: 18px; position: relative; z-index: 1;
+        }
+        .testimonial-author { font-weight: 600; font-size: 0.92rem; color: var(--bg-dark); }
+        .testimonial-source { font-size: 0.8rem; color: var(--text-secondary); }
+
+        /* ========== CONTACT ========== */
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px;
+            max-width: 1000px; margin: 0 auto; align-items: start;
+        }
+        .contact-info h3 {
+            font-family: var(--font-heading); font-size: 1.5rem;
+            font-weight: 700; margin-bottom: 16px; color: var(--bg-dark);
+        }
+        .contact-info > p { color: var(--text-secondary); margin-bottom: 32px; line-height: 1.7; }
+        .contact-detail { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 22px; }
+        .contact-detail .icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            background: rgba(200,146,60,0.08); flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem;
+        }
+        .contact-detail h5 { font-size: 0.88rem; font-weight: 600; color: var(--bg-dark); margin-bottom: 2px; }
+        .contact-detail span { font-size: 0.88rem; color: var(--text-secondary); }
+        .contact-form { background: var(--white); padding: 40px; border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block; font-size: 0.85rem; font-weight: 500;
+            color: var(--text-primary); margin-bottom: 6px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px 16px; border: 1.5px solid var(--border);
+            border-radius: var(--radius); font-size: 0.92rem;
+            font-family: var(--font-body); color: var(--text-primary);
+            background: var(--bg-primary); transition: var(--transition);
+            outline: none; resize: vertical;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent); box-shadow: 0 0 0 3px rgba(200,146,60,0.08);
+        }
+        .form-group textarea { min-height: 120px; }
+        .form-submit {
+            width: 100%; padding: 14px 28px; background: var(--accent);
+            color: #fff; border: none; border-radius: 28px;
+            font-size: 0.95rem; font-weight: 500; cursor: pointer;
+            letter-spacing: 0.04em; font-family: var(--font-body);
+            transition: var(--transition);
+        }
+        .form-submit:hover { background: var(--accent-dark); }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--bg-dark); color: var(--text-light);
+            padding: 64px 48px 32px;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px; max-width: 1100px; margin: 0 auto 48px;
+        }
+        .footer-brand .logo-text {
+            font-family: var(--font-heading); font-size: 1.3rem;
+            font-weight: 700; color: #fff; margin-bottom: 12px;
+        }
+        .footer-brand p { font-size: 0.88rem; line-height: 1.7; }
+        .footer-col h5 {
+            font-size: 0.9rem; font-weight: 600; color: #fff;
+            margin-bottom: 16px; letter-spacing: 0.04em;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul li a {
+            color: var(--text-light); text-decoration: none;
+            font-size: 0.86rem; transition: var(--transition);
+        }
+        .footer-col ul li a:hover { color: var(--accent-light); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 24px; text-align: center;
+            font-size: 0.82rem; max-width: 1100px; margin: 0 auto;
+        }
+        .footer-bottom a { color: var(--accent-light); text-decoration: none; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .hero-visual { display: none; }
+            .hero-content { max-width: 100%; }
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            section { padding: 64px 24px; }
+            .nav { padding: 0 24px; }
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column; position: absolute;
+                top: 72px; left: 0; right: 0; background: var(--bg-primary);
+                padding: 24px 32px; gap: 16px;
+                box-shadow: var(--shadow-md);
+            }
+            .menu-toggle { display: flex; }
+            .hero { padding: 100px 24px 60px; min-height: auto; }
+            .services-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .about-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .stat-number { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav" id="navbar">
+    <a href="#" class="nav-logo">
+        <span class="logo-mark">皮</span>
+        皮耳朵工作室
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#services">服务项目</a></li>
+        <li><a href="#portfolio">作品展示</a></li>
+        <li><a href="#contact" class="nav-cta">联系我们</a></li>
+    </ul>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="hero-label">Culture &amp; Art Studio</span>
+        <h1>以<span class="highlight">匠心</span>之手<br>传文化之美</h1>
+        <p>青山区皮耳朵文化艺术工作室，致力于传统文化艺术的传承与创新。我们提供专业的手工艺培训、艺术展览策划、文创产品设计与定制服务，让艺术融入生活。</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">预约咨询 →</a>
+            <a href="#services" class="btn btn-outline">了解服务</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="circle-lg"></div>
+        <div class="circle-md"></div>
+        <div class="circle-sm"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about">
+    <div class="section-header">
+        <span class="section-tag">关于我们</span>
+        <h2>传承匠心，创造美好</h2>
+        <p>扎根青山，面向世界。我们以专业的艺术素养和执着的工匠精神，为每一位客户提供高品质的文化艺术体验。</p>
+    </div>
+    <div class="about-grid">
+        <div class="about-image">
+            <img src="images/about-studio.svg" alt="皮耳朵工作室环境" loading="lazy">
+        </div>
+        <div class="about-text">
+            <h3>青山区皮耳朵文化艺术工作室</h3>
+            <p>皮耳朵文化艺术工作室成立于2019年，坐落于武汉市青山区。我们是一家集手工艺教学、艺术展览策划、文创产品开发、企业团建定制于一体的综合性文化艺术机构。</p>
+            <p>工作室秉持"匠心传承，创新表达"的核心理念，汇聚了一批专业过硬、热爱艺术的创作团队。我们擅长将传统工艺与现代审美相结合，打造出具有独特文化内涵的艺术作品和体验课程。</p>
+            <p>无论是个人兴趣培养、亲子手作体验，还是企业文化建设、商业空间艺术装置，皮耳朵都能为您提供专业、贴心的定制服务。</p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">年行业深耕</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3000+</div>
+                    <div class="stat-label">服务客户</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">合作企业</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section class="services" id="services">
+    <div class="section-header">
+        <span class="section-tag">服务项目</span>
+        <h2>多元化文化艺术服务</h2>
+        <p>覆盖手工艺培训、艺术策展、文创设计、企业定制四大核心板块，满足不同场景的艺术需求。</p>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">🎨</div>
+            <h4>手工艺培训课程</h4>
+            <p>开设皮具制作、陶艺、扎染、编织、木艺等十余种手工艺课程。面向零基础学员，小班教学，由资深匠人一对一指导，让每个人都能感受手作的温度与乐趣。</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🏛️</div>
+            <h4>艺术展览策划</h4>
+            <p>提供主题艺术展览的全案策划与执行服务，涵盖场地规划、展品组织、视觉设计、宣传推广。曾多次承办社区文化艺术节及商业空间艺术展。</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">✨</div>
+            <h4>文创产品设计与定制</h4>
+            <p>将传统文化元素与现代设计语言融合，为企业、机构及个人提供文创礼品、纪念品、艺术装饰的原创设计与定制生产服务。</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🤝</div>
+            <h4>企业团建 & 亲子活动</h4>
+            <p>为企业和家庭量身定制手作团建、亲子艺术体验活动。通过共同创作提升团队凝聚力，增进亲子互动，留下美好回忆。</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🖼️</div>
+            <h4>艺术空间装饰</h4>
+            <p>为商业空间、展厅、办公环境提供艺术装置设计及墙面装饰服务。以独特的艺术语言赋予空间文化灵魂与视觉张力。</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📚</div>
+            <h4>文化艺术交流</h4>
+            <p>定期举办艺术家沙龙、文化讲座、作品鉴赏会等活动，搭建艺术爱好者交流平台，推动在地文化艺术生态的繁荣发展。</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== PORTFOLIO ==================== -->
+<section id="portfolio">
+    <div class="section-header">
+        <span class="section-tag">作品展示</span>
+        <h2>匠心之作，精彩呈现</h2>
+        <p>每一件作品都凝聚着我们对艺术的热爱与对品质的执着追求。</p>
+    </div>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="images/portfolio-01.svg" alt="手工皮具系列" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>手工皮具系列</h4>
+                <span>植鞣革 · 手工缝制</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/portfolio-02.svg" alt="陶瓷艺术器皿" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>陶瓷艺术器皿</h4>
+                <span>手工拉坯 · 柴烧</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/portfolio-03.svg" alt="扎染艺术壁挂" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>扎染艺术壁挂</h4>
+                <span>天然染料 · 原创图案</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/portfolio-04.svg" alt="文创礼盒套装" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>文创礼盒套装</h4>
+                <span>企业定制 · 节日限定</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/portfolio-05.svg" alt="木艺手工雕刻" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>木艺手工雕刻</h4>
+                <span>实木 · 传统榫卯</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/portfolio-06.svg" alt="编织艺术装置" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>编织艺术装置</h4>
+                <span>纤维艺术 · 空间装饰</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/portfolio-07.svg" alt="艺术展览现场" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>艺术展览现场</h4>
+                <span>策展执行 · 空间设计</span>
+            </div>
+        </div>
+        <div class="portfolio-item">
+            <img src="images/portfolio-08.svg" alt="亲子手作活动" loading="lazy">
+            <div class="portfolio-overlay">
+                <h4>亲子手作活动</h4>
+                <span>体验课 · 工作坊</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section id="testimonials">
+    <div class="section-header">
+        <span class="section-tag">客户心声</span>
+        <h2>他们的故事，我们的动力</h2>
+        <p>来自学员和合作伙伴的真实评价。</p>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card">
+            <p class="testimonial-text">在皮耳朵学了一个季度的皮具课，从完全零基础到现在能独立完成钱包和手账本，成就感满满！林老师特别耐心，每道工序都手把手教，工作室氛围也超好。</p>
+            <div class="testimonial-author">张女士</div>
+            <div class="testimonial-source">皮具课程学员</div>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">公司年会选了皮耳朵的扎染团建，大家玩得特别开心。陈老师讲解生动有趣，每个人都做出了独一无二的作品，HR 同事说这是近几年最受欢迎的一次团建。</p>
+            <div class="testimonial-author">李经理</div>
+            <div class="testimonial-source">某科技公司行政部</div>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">请皮耳朵为我们商场做的中秋艺术装置非常惊艳，传统元素和现代设计结合得恰到好处，顾客纷纷拍照打卡，效果远超预期。</p>
+            <div class="testimonial-author">周总监</div>
+            <div class="testimonial-source">某商业综合体市场部</div>
+        </div>
+        <div class="testimonial-card">
+            <p class="testimonial-text">带孩子来体验了亲子陶艺课，小朋友玩泥巴玩得不肯走。老师很会引导孩子，既培养了动手能力又涨了艺术见识，已经是我们的周末固定节目了。</p>
+            <div class="testimonial-author">刘女士</div>
+            <div class="testimonial-source">亲子课程家长</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" style="background: var(--bg-secondary);">
+    <div class="section-header">
+        <span class="section-tag">联系我们</span>
+        <h2>期待与您相遇</h2>
+        <p>欢迎预约参观、咨询课程或洽谈合作，我们将竭诚为您服务。</p>
+    </div>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h3>联系方式</h3>
+            <p>无论您是想了解课程详情、洽谈商业合作，还是有任何艺术相关的需求，都可以通过以下方式联系我们。</p>
+            <div class="contact-detail">
+                <div class="icon">📍</div>
+                <div>
+                    <h5>工作室地址</h5>
+                    <span>内蒙古自治区包头市<br>青山区万青路街道新型居住区（翠溪园-2-1）东北角</span>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <div class="icon">📞</div>
+                <div>
+                    <h5>咨询电话</h5>
+                    <span>0472-6001855</span>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <div class="icon">📧</div>
+                <div>
+                    <h5>电子邮箱</h5>
+                    <span>hello@pierduo-art.com</span>
+                </div>
+            </div>
+            <div class="contact-detail">
+                <div class="icon">🕐</div>
+                <div>
+                    <h5>开放时间</h5>
+                    <span>周二至周日 10:00 — 18:00<br>（周一休馆）</span>
+                </div>
+            </div>
+        </div>
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">您的姓名</label>
+                <input type="text" id="name" placeholder="请输入您的姓名" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">联系电话</label>
+                <input type="tel" id="phone" placeholder="请输入您的手机号码" required>
+            </div>
+            <div class="form-group">
+                <label for="interest">关注方向</label>
+                <input type="text" id="interest" placeholder="如：皮具课程 / 团建定制 / 文创合作">
+            </div>
+            <div class="form-group">
+                <label for="message">留言内容</label>
+                <textarea id="message" placeholder="请描述您的需求或想了解的内容…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">发送留言 →</button>
+        </form>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="logo-text">皮耳朵文化艺术工作室</div>
+            <p>青山区皮耳朵文化艺术工作室，以匠心传承文化，以创意点亮生活。致力于为个人、家庭和企业提供高品质的文化艺术服务与体验。</p>
+        </div>
+        <div class="footer-col">
+            <h5>服务项目</h5>
+            <ul>
+                <li><a href="#services">手工艺培训</a></li>
+                <li><a href="#services">艺术展览策划</a></li>
+                <li><a href="#services">文创产品定制</a></li>
+                <li><a href="#services">企业团建活动</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>快速导航</h5>
+            <ul>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#portfolio">作品展示</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>关注我们</h5>
+            <ul>
+                <li><a href="#">微信公众号</a></li>
+                <li><a href="#">小红书</a></li>
+                <li><a href="#">抖音</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2019 - 2026 青山区皮耳朵文化艺术工作室 版权所有 | <a href="#">蒙ICP备2023000369号-1</a></p>
+    </div>
+</footer>
+
+<script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+    document.querySelectorAll('#navLinks a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Smooth reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.service-card, .portfolio-item, .team-card, .testimonial-card, .about-image, .about-text, .contact-form, .contact-info').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+
+    // Form submit
+    function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-submit');
+        const original = btn.textContent;
+        btn.textContent = '正在发送…';
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.textContent = '✓ 留言已发送，感谢！';
+            btn.style.background = '#4a9c5d';
+            e.target.reset();
+            setTimeout(() => {
+                btn.textContent = original;
+                btn.disabled = false;
+                btn.style.background = '';
+            }, 3000);
+        }, 800);
+    }
+</script>
+</body>
+</html>
