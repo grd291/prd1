@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5efe4"/>
+      <stop offset="50%" stop-color="#ede0cc"/>
+      <stop offset="100%" stop-color="#e0d0b4"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c8923c"/>
+      <stop offset="100%" stop-color="#a6762c"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4a87c"/>
+      <stop offset="50%" stop-color="#b8956a"/>
+      <stop offset="100%" stop-color="#a68458"/>
+    </linearGradient>
+    <linearGradient id="clay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d4b896"/>
+      <stop offset="100%" stop-color="#c4a47c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <!-- Window frame -->
+  <rect x="120" y="180" width="260" height="360" rx="8" fill="#faf8f5" stroke="#c8b896" stroke-width="3"/>
+  <line x1="250" y1="180" x2="250" y2="540" stroke="#c8b896" stroke-width="2"/>
+  <line x1="120" y1="360" x2="380" y2="360" stroke="#c8b896" stroke-width="2"/>
+  <!-- Light through window -->
+  <polygon points="120,540 380,540 500,800 0,800" fill="rgba(200,146,60,0.08)"/>
+  <!-- Workbench -->
+  <rect x="280" y="620" width="340" height="16" rx="4" fill="url(#wood)"/>
+  <rect x="300" y="636" width="20" height="80" rx="2" fill="#a68458"/>
+  <rect x="580" y="636" width="20" height="80" rx="2" fill="#a68458"/>
+  <!-- Tools on bench -->
+  <rect x="340" y="590" width="40" height="30" rx="4" fill="#8b7355"/>
+  <rect x="355" y="570" width="10" height="25" rx="3" fill="#6b5340"/>
+  <circle cx="430" cy="610" r="18" fill="url(#clay)" stroke="#b8956a" stroke-width="2"/>
+  <rect x="480" y="595" width="60" height="18" rx="3" fill="#d4a86c"/>
+  <!-- Leather piece on wall -->
+  <rect x="540" y="280" width="140" height="180" rx="6" fill="#c4956a" opacity="0.7"/>
+  <path d="M550,290 Q620,300 670,290" stroke="#a87850" stroke-width="1.5" fill="none"/>
+  <path d="M550,320 Q600,335 670,320" stroke="#a87850" stroke-width="1.5" fill="none"/>
+  <!-- Scissors on wall -->
+  <path d="M560,500 L580,540 M580,500 L560,540" stroke="#888" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="570" cy="495" r="8" stroke="#888" stroke-width="2.5" fill="none"/>
+  <circle cx="570" cy="545" r="8" stroke="#888" stroke-width="2.5" fill="none"/>
+  <!-- Thread spool -->
+  <ellipse cx="650" cy="520" rx="20" ry="12" fill="#d4a86c"/>
+  <rect x="644" y="508" width="12" height="12" rx="3" fill="#c8923c"/>
+  <!-- Shelf -->
+  <rect x="100" y="130" width="180" height="10" rx="3" fill="#c4a87c"/>
+  <rect x="120" y="100" width="35" height="30" rx="4" fill="#d4b896"/>
+  <rect x="165" y="95" width="30" height="35" rx="4" fill="#c4956a"/>
+  <rect x="205" y="105" width="28" height="25" rx="3" fill="#b8956a"/>
+  <!-- Plant -->
+  <rect x="680" y="700" width="40" height="50" rx="6" fill="#c8923c" opacity="0.6"/>
+  <circle cx="700" cy="680" r="35" fill="#8b9a6b" opacity="0.5"/>
+  <circle cx="680" cy="660" r="25" fill="#9aab7b" opacity="0.5"/>
+  <circle cx="720" cy="665" r="22" fill="#7b8a5b" opacity="0.4"/>
+  <!-- Decorative text -->
+  <text x="400" y="900" text-anchor="middle" font-family="serif" font-size="120" fill="rgba(200,146,60,0.06)" font-weight="bold">藝</text>
+</svg>

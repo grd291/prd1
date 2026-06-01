@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ede0cc"/><stop offset="100%" stop-color="#d4c0a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg1)"/>
+  <!-- Leather wallet -->
+  <rect x="120" y="200" width="360" height="240" rx="24" fill="#c4956a" stroke="#a87850" stroke-width="2"/>
+  <rect x="120" y="200" width="360" height="240" rx="24" fill="url(#bg1)" opacity="0.3"/>
+  <path d="M120,240 Q300,280 480,240" stroke="#a87850" stroke-width="2.5" fill="none"/>
+  <!-- Stitching -->
+  <path d="M140,220 L140,420 M460,220 L460,420 M140,420 L460,420" stroke="#d4a86c" stroke-width="1.5" stroke-dasharray="8,6" fill="none"/>
+  <!-- Leather texture lines -->
+  <path d="M180,280 Q300,300 420,280" stroke="#bf8f60" stroke-width="1" opacity="0.5"/>
+  <path d="M180,320 Q250,340 420,320" stroke="#bf8f60" stroke-width="1" opacity="0.5"/>
+  <path d="M180,360 Q320,380 420,360" stroke="#bf8f60" stroke-width="1" opacity="0.5"/>
+  <!-- Snap button -->
+  <circle cx="300" cy="420" r="10" fill="#b8956a" stroke="#a87850" stroke-width="2"/>
+  <circle cx="300" cy="420" r="4" fill="#a87850"/>
+  <!-- Thread -->
+  <path d="M380,260 Q410,250 420,230" stroke="#d4a86c" stroke-width="2"/>
+  <circle cx="420" cy="226" r="2" fill="#d4a86c"/>
+</svg>

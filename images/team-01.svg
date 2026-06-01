@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="av1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8dcc8"/><stop offset="100%" stop-color="#d4c0a0"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#av1)"/>
+  <circle cx="100" cy="78" r="32" fill="#d4b896" stroke="#c4a080" stroke-width="2"/>
+  <path d="M55,155 Q55,118 100,118 Q145,118 145,155" fill="#c8923c" opacity="0.35" stroke="#b08040" stroke-width="1.5"/>
+  <circle cx="90" cy="72" r="4" fill="#8b6a50"/>
+  <circle cx="110" cy="72" r="4" fill="#8b6a50"/>
+  <path d="M94,85 Q100,92 106,85" stroke="#8b6a50" stroke-width="1.8" fill="none"/>
+  <text x="100" y="168" text-anchor="middle" font-family="serif" font-size="14" fill="#a6762c" font-weight="bold">创始人</text>
+</svg>

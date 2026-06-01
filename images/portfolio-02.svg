@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8ddd0"/><stop offset="100%" stop-color="#d4c8b8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg2)"/>
+  <!-- Pottery wheel base -->
+  <ellipse cx="300" cy="480" rx="160" ry="24" fill="#c4b8a4"/>
+  <!-- Main vase -->
+  <path d="M240,420 Q220,380 230,300 Q240,240 260,200 Q280,160 300,150 Q320,160 340,200 Q360,240 370,300 Q380,380 360,420 Z" fill="#d4c0a8" stroke="#b8a080" stroke-width="2"/>
+  <!-- Vase rim -->
+  <ellipse cx="300" cy="150" rx="40" ry="10" fill="#dcc8b0" stroke="#b8a080" stroke-width="1.5"/>
+  <!-- Vase opening -->
+  <ellipse cx="300" cy="150" rx="28" ry="7" fill="#c8b090"/>
+  <!-- Decorative pattern on vase -->
+  <path d="M250,280 Q275,270 300,280 Q325,290 350,280" stroke="#b8956a" stroke-width="2" fill="none"/>
+  <path d="M245,320 Q275,310 300,320 Q325,330 355,320" stroke="#b8956a" stroke-width="2" fill="none"/>
+  <path d="M250,360 Q275,350 300,360 Q325,370 350,360" stroke="#b8956a" stroke-width="2" fill="none"/>
+  <!-- Small bowl -->
+  <path d="M420,430 Q430,410 450,405 Q470,410 480,430 Z" fill="#d4c0a8" stroke="#b8a080" stroke-width="1.5"/>
+  <ellipse cx="450" cy="405" rx="30" ry="8" fill="#dcc8b0" stroke="#b8a080" stroke-width="1"/>
+  <!-- Clay pieces -->
+  <rect x="100" y="460" width="50" height="30" rx="8" fill="#c8b090" opacity="0.7"/>
+  <rect x="430" y="470" width="40" height="20" rx="6" fill="#c8b090" opacity="0.6"/>
+</svg>

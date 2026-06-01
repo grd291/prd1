@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5efe4"/><stop offset="100%" stop-color="#e8dcc8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg8)"/>
+  <!-- Table -->
+  <rect x="120" y="400" width="360" height="20" rx="6" fill="#c4a87c"/>
+  <rect x="160" y="420" width="16" height="90" rx="3" fill="#b09060"/>
+  <rect x="424" y="420" width="16" height="90" rx="3" fill="#b09060"/>
+  <!-- Adult figure (simplified) -->
+  <circle cx="240" cy="290" r="28" fill="#d4b896" stroke="#c4a080" stroke-width="1.5"/>
+  <rect x="225" y="318" width="30" height="55" rx="10" fill="#c8923c" opacity="0.5"/>
+  <rect x="220" y="340" width="40" height="8" rx="4" fill="#a6762c" opacity="0.4"/>
+  <!-- Child figure -->
+  <circle cx="370" cy="320" r="20" fill="#e0c8a8" stroke="#d0b898" stroke-width="1.5"/>
+  <rect x="358" y="340" width="24" height="38" rx="8" fill="#d4a86c" opacity="0.5"/>
+  <!-- Hands working together -->
+  <circle cx="290" cy="350" r="8" fill="#d4b896" opacity="0.6"/>
+  <circle cx="320" cy="345" r="6" fill="#e0c8a8" opacity="0.6"/>
+  <!-- Paint/craft supplies on table -->
+  <rect x="150" y="378" width="28" height="22" rx="4" fill="#e8c97a"/>
+  <rect x="190" y="380" width="22" height="20" rx="4" fill="#7b9b6b"/>
+  <rect x="420" y="378" width="25" height="22" rx="4" fill="#d4a050"/>
+  <circle cx="460" cy="390" r="12" fill="#9b7b5b" opacity="0.5"/>
+  <!-- Hearts -->
+  <path d="M440,290 Q445,275 455,280 Q465,275 470,290 Q470,305 455,315 Q440,305 440,290Z" fill="#c8923c" opacity="0.3"/>
+  <path d="M180,290 Q185,278 193,282 Q201,278 205,290 Q205,302 193,310 Q180,302 180,290Z" fill="#c8923c" opacity="0.2"/>
+</svg>

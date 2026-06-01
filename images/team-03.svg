@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="av3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8ddd0"/><stop offset="100%" stop-color="#d4c4a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="100" fill="url(#av3)"/>
+  <circle cx="100" cy="78" r="32" fill="#d4c0a0" stroke="#c4ac88" stroke-width="2"/>
+  <path d="M55,155 Q55,118 100,118 Q145,118 145,155" fill="#c8923c" opacity="0.3" stroke="#a6762c" stroke-width="1.5"/>
+  <circle cx="90" cy="72" r="4" fill="#6b5030"/>
+  <circle cx="110" cy="72" r="4" fill="#6b5030"/>
+  <path d="M94,85 Q100,91 106,85" stroke="#6b5030" stroke-width="1.8" fill="none"/>
+  <text x="100" y="168" text-anchor="middle" font-family="serif" font-size="14" fill="#8b6a40" font-weight="bold">木艺导师</text>
+</svg>

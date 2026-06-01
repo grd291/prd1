@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ede0cc"/><stop offset="100%" stop-color="#d4c0a0"/>
+    </linearGradient>
+    <linearGradient id="wood5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c4a87c"/><stop offset="100%" stop-color="#a68458"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg5)"/>
+  <!-- Wood block -->
+  <rect x="160" y="180" width="280" height="280" rx="8" fill="url(#wood5)" stroke="#8b6a40" stroke-width="2"/>
+  <!-- Wood grain lines -->
+  <path d="M180,220 Q300,230 420,220" stroke="#b8956a" stroke-width="1.5" opacity="0.6"/>
+  <path d="M180,260 Q280,275 420,260" stroke="#b8956a" stroke-width="1" opacity="0.5"/>
+  <path d="M180,300 Q350,315 420,300" stroke="#b8956a" stroke-width="1.5" opacity="0.6"/>
+  <path d="M180,340 Q260,355 420,340" stroke="#b8956a" stroke-width="1" opacity="0.5"/>
+  <path d="M180,380 Q320,395 420,380" stroke="#b8956a" stroke-width="1.5" opacity="0.6"/>
+  <path d="M180,420 Q280,435 420,420" stroke="#b8956a" stroke-width="1" opacity="0.5"/>
+  <!-- Carved pattern -->
+  <path d="M240,250 Q260,230 280,250 Q300,270 320,250 Q340,230 360,250" stroke="#8b6a40" stroke-width="2" fill="none" opacity="0.7"/>
+  <path d="M240,370 Q260,350 280,370 Q300,390 320,370 Q340,350 360,370" stroke="#8b6a40" stroke-width="2" fill="none" opacity="0.7"/>
+  <!-- Chisel tool -->
+  <rect x="430" y="400" width="70" height="12" rx="3" fill="#999"/>
+  <rect x="460" y="395" width="50" height="22" rx="4" fill="#c4a070"/>
+</svg>

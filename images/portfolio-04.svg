@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" fill="none">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#efe8d8"/><stop offset="100%" stop-color="#dcc8a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg4)"/>
+  <!-- Gift box body -->
+  <rect x="150" y="240" width="300" height="220" rx="12" fill="#c8923c" stroke="#a6762c" stroke-width="2"/>
+  <!-- Gift box lid -->
+  <rect x="140" y="210" width="320" height="50" rx="12" fill="#d4a050" stroke="#a6762c" stroke-width="2"/>
+  <!-- Ribbon vertical -->
+  <rect x="280" y="210" width="40" height="250" rx="4" fill="#e8c97a" stroke="#c8923c" stroke-width="1.5"/>
+  <!-- Ribbon horizontal -->
+  <rect x="150" y="310" width="300" height="40" rx="4" fill="#e8c97a" stroke="#c8923c" stroke-width="1.5"/>
+  <!-- Bow -->
+  <ellipse cx="300" cy="210" rx="35" ry="18" fill="#e8c97a" stroke="#c8923c" stroke-width="1.5"/>
+  <ellipse cx="300" cy="225" rx="25" ry="12" fill="#d4a050" stroke="#a6762c" stroke-width="1"/>
+  <circle cx="300" cy="215" r="8" fill="#c8923c"/>
+  <!-- Decorative pattern -->
+  <circle cx="200" cy="280" r="4" fill="#a6762c" opacity="0.4"/>
+  <circle cx="400" cy="280" r="4" fill="#a6762c" opacity="0.4"/>
+  <circle cx="200" cy="380" r="4" fill="#a6762c" opacity="0.4"/>
+  <circle cx="400" cy="380" r="4" fill="#a6762c" opacity="0.4"/>
+</svg>
